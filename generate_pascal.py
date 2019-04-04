@@ -1,4 +1,6 @@
 class Solution():
+    # Need to revamp code for performance improvement
+    # Each node can be calculated directly e.g. 3C1 = 3/1 = 3; 3C2 = 3x2/(1x2) = 3; 4C2 = 4x3/(1x2) = 6; 5C2 = 5x4/(1x2) = 10
     def generate(self, numRows):
         pt =[]
         for i in range(numRows):
@@ -9,9 +11,9 @@ class Solution():
         return pt
 
     def calcNode(self,k,l):
-        if (l == 0) or (l == k):
-            return 1
-        val = self.calcNode(k-1,l-1) + self.calcNode(k-1,l)
+        val = 1
+        for i in range(l):
+            val *= (k-i)/(i+1)
         return val
 
 def main():
