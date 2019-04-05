@@ -13,6 +13,10 @@ class Solution():
     def calcNode(self,k,l):
         val = 1
         for i in range(l):
+            # THIS DOESN'T WORK as the division as formulated here
+            # can result in non-integral answers and unfortunately
+            # the computer representation of decimals suffers from 
+            # rounding errors and loss of digits
             val *= (k-i)/(i+1)
         return val
 
