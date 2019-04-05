@@ -12,9 +12,10 @@ class Solution():
 
     def calcNode(self,k,l):
         val = 1
-        for i in range(l):
-            val *= (k-i)/(i+1)
-        return val
+        for i in range(1,l+1):
+            val *= (k+1-i)/(i)
+        #print("{}C{} is {}".format(k+1,l+1,int(val)))
+        return int(val)
 
 def main():
     print("Debug line one")
